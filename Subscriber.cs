@@ -9,5 +9,11 @@ namespace SubscriptionProject
     class Subscriber
     {
         public string Name { get; set; }
+        public List<Category> Subscription { get; set; }
+
+        public Subscriber(string name)
+        {
+            Name = name;
+        }
     }
 }

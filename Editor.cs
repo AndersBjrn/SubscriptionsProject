@@ -9,5 +9,11 @@ namespace SubscriptionProject
     class Editor
     {
         public string Name { get; set; }
+        public List<Article> ArticleList { get; set; }
+
+        public Editor(string name)
+        {
+            Name = name;
+        }
     }
 }

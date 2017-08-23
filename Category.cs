@@ -13,9 +13,9 @@ namespace SubscriptionProject
         public List<Category> Subcategories { get; set; }
         public List<Article> Articles { get; set; }
 
-        public Category()
+        public Category(string name)
         {
-
+            Name = name;
         }
     }
 }
