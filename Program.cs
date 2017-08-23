@@ -49,7 +49,11 @@ namespace SubscriptionProject
             enviroment.Articles.Add(a8);
             goodNews.Articles.Add(a9);
             Subscriber subs1 = new Subscriber("Kalle");
+            subs1.Subscription.Add(news);
+            subs1.Subscription.Add(career);
             Subscriber subs2 = new Subscriber("Lisa");
+            subs2.Subscription.Add(goodNews);
+            subs2.Subscription.Add(aboutUs);
 
         }
     }
