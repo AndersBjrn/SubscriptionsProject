@@ -15,6 +15,10 @@ namespace SubscriptionProject
             Company company = new Company(companyName);
 
             frontEnd.UserInterface(company);
+
+            Subscriber subs1 = new Subscriber("Kalle");
+            Subscriber subs2 = new Subscriber("Lisa");
+
         }
     }
 }
