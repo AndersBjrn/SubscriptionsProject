@@ -12,6 +12,7 @@ namespace SubscriptionProject
         public Editor Editor { get; set; }
         public string Summary { get; set; }
         public string Text { get; set; }
+        public DateTime CreationDate { get; }
 
         public Article(string title, string summary, string text, Editor editor)
         {
@@ -19,6 +20,7 @@ namespace SubscriptionProject
             Summary = summary;
             Text = text;
             Editor = editor;
+            CreationDate = DateTime.Now;
         }
 
         public override string ToString()

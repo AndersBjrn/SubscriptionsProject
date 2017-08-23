@@ -18,10 +18,29 @@ namespace SubscriptionProject
 
         public void CreateMessage()
         {
+            List<Article> newArticles = new List<Article>();
             foreach (Category category in Subscriber.Subscription)
             {
-                GetUpdates()
+                newArticles = Subscriber.GetUpdates();
             }
+            foreach (Article article in newArticles)
+            {
+                Message += article.ToString();
+            }
+            if (string.IsNullOrEmpty(Message))
+            {
+                Console.WriteLine("No new articles");
+            }
+            else
+            {
+                SendMail();
+            }
+        }
+
+        private void SendMail()
+        {
+            Console.WriteLine("Mail to " + Subscriber.Name);
+            Console.WriteLine(Message);
         }
     }
 }
