@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class Interface
+    class FrontEnd
     {
+        static void SplashScreen()
+        {
+            //Skriva ut alla val
+        }
+
+        static void AddCategory()
+        {
+            Category News = new Category();
+
+        }
+
+        static void AddArticle()
+        {
+
+        }
+
+
     }
 }
