@@ -22,5 +22,10 @@ namespace SubscriptionProject
 
             Name = name;
         }
+
+        public Category(string _Name)
+        {
+            Name = _Name;
+        }
     }
 }
