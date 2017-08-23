@@ -12,7 +12,7 @@ namespace SubscriptionProject
         {
             FrontEnd frontEnd = new FrontEnd();
             string companyName = frontEnd.GetCompanyName();
-            Company companty = new Company(companyName);
+            Company company = new Company(companyName);
         }
     }
 }
