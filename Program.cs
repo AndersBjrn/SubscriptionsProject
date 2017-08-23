@@ -32,9 +32,13 @@ namespace SubscriptionProject
             Editor Lina = new Editor("Lina");
             Article a1 = new Article("Vackert väder idag igen", "Solen sken", "Mycket mycket solsken", Bengt);
             goodNews.Articles.Add(a1);
+
             Subscriber subs1 = new Subscriber("Kalle");
-            subs1.Subscription
+            subs1.Subscription.Add(news);
+            subs1.Subscription.Add(career);
             Subscriber subs2 = new Subscriber("Lisa");
+            subs2.Subscription.Add(goodNews);
+            subs2.Subscription.Add(aboutUs);
 
         }
     }
