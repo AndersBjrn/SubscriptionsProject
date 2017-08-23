@@ -10,11 +10,15 @@ namespace SubscriptionProject
     {
         public string Name { get; set; }
         public Category Parent { get; set; }
-        public Dictionary<string,Category> Subcategories { get; set; }
+
+        public List<Category> Subcategories { get; set; }
+
         public List<Article> Articles { get; set; }
 
         public Category(string name)
         {
+            //Här vill vi att Parent ska sättas.
+
             Name = name;
         }
     }
