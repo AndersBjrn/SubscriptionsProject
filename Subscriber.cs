@@ -21,13 +21,34 @@ namespace SubscriptionProject
             List<Article> articleList = new List<Article>();
             foreach (Category category in Subscription)
             {
-                foreach (Article article in category.Articles)
+                articleList = GetArticles(category, articleList);
+                foreach (Article article in articleList)
                 {
-                    bool matchFound = (DateTime.Now -article.CreationDate).TotalDays < 7;
+                    bool matchFound = (DateTime.Now - article.CreationDate).TotalDays < 7;
                     if (matchFound)
                     {
                         articleList.Add(article);
                     }
+                }
+            }
+            return articleList;
+        }
+
+        public List<Article> GetArticles(Category category, List<Article> articleList)
+        {
+            if (category.Articles.Count != 0)
+            {
+                return articleList;
+            }
+            else
+            {
+                foreach (Category c in category.Subcategories)
+                {
+                    foreach (Article article in c.Articles)
+                    {
+                        articleList.Add(article);
+                    }
+                    return GetArticles(c, articleList);
                 }
             }
             return articleList;
