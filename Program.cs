@@ -46,13 +46,13 @@ namespace SubscriptionProject
             Article a8 = new Article("Info om oss", "Rubrik om ost", "Text som handlar om företaget", Håkan);
             Article a9 = new Article("Testartikel 9", "nio", "jag orkar inte mer", Bengt);
             goodNews.Articles.Add(a1);
-            enviroment.Articles.Add(a2);
+            environment.Articles.Add(a2);
             goodNews.Articles.Add(a3);
             career.Articles.Add(a4);
-            enviroment.Articles.Add(a5);
+            environment.Articles.Add(a5);
             badNews.Articles.Add(a6);
             badNews.Articles.Add(a7);
-            enviroment.Articles.Add(a8);
+            environment.Articles.Add(a8);
             goodNews.Articles.Add(a9);
             Subscriber subs1 = new Subscriber("Kalle");
             subs1.Subscription.Add(news);
