@@ -15,5 +15,22 @@ namespace SubscriptionProject
         {
             Name = name;
         }
+
+        public List<Article> GetUpdates()
+        {
+            List<Article> articleList = new List<Article>();
+            foreach (Category category in Subscription)
+            {
+                foreach (Article article in category.Articles)
+                {
+                    bool matchFound = (DateTime.Now -article.CreationDate).TotalDays < 7;
+                    if (matchFound)
+                    {
+                        articleList.Add(article);
+                    }
+                }
+            }
+            return articleList;
+        }
     }
 }

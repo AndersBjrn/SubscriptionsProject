@@ -20,7 +20,7 @@ namespace SubscriptionProject
         {
             foreach (Category category in Subscriber.Subscription)
             {
-                GetUpdates()
+                Subscriber.GetUpdates();
             }
         }
     }
