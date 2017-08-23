@@ -14,6 +14,7 @@ namespace SubscriptionProject
         public Subscriber(string name)
         {
             Name = name;
+            Subscription = new List<Category>();
         }
 
         public List<Article> GetUpdates()
@@ -38,17 +39,17 @@ namespace SubscriptionProject
         {
             if (category.Articles.Count != 0)
             {
-                return articleList;
+                foreach (var article in category.Articles)
+                {
+                    articleList.Add(article);
+                }
             }
             else
             {
                 foreach (Category c in category.Subcategories)
                 {
-                    foreach (Article article in c.Articles)
-                    {
-                        articleList.Add(article);
-                    }
-                    return GetArticles(c, articleList);
+                    List<Article> temp = GetArticles(c, articleList);
+                    temp.ForEach(x => articleList.Add(x));
                 }
             }
             return articleList;
