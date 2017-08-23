@@ -8,16 +8,30 @@ namespace SubscriptionProject
 {
     class FrontEnd
     {
-        static void SplashScreen()
+        void SplashScreen()
         {
             //Skriva ut alla val
-            Console.WriteLine("vill);
+            PrintOptions();
         }
 
-        static void AddCategory()
+        static void AddCategory(Company company , string parentCategory , string categoryName)
         {
-            Category News = new Category();
+            bool isOrphan;
+            if (parentCategory == "")
+                isOrphan = true;
+            else
+                isOrphan = false;
 
+            if (isOrphan)
+            {
+                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName));
+            }
+            else
+            {
+                Category parent = company.SubscriptionableCategories[parentCategory];
+                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName, parent));
+            }
+            
 
         }
 
@@ -33,7 +47,13 @@ namespace SubscriptionProject
 
         public void UserInterface(Company company)
         {
+            SplashScreen();
             AddCategory(company);
+        }
+
+        private void PrintOptions()
+        {
+            Console.WriteLine($"Vill du{Environment.NewLine}(1) Skapa en ny kategori{Environment.NewLine}(2) Skapa en ny artikel");
         }
     }
 }
