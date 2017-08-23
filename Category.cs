@@ -17,14 +17,15 @@ namespace SubscriptionProject
 
         public Category(string name , Category _Parent)
         {
-            //Här vill vi att Parent ska sättas.
+            // denna konstruktorn åkallas när det finns en förälder
             Parent = _Parent;
-
+            Parent.Subcategories.Add(this);
             Name = name;
         }
 
         public Category(string _Name)
         {
+            // denna konstruktorn åkallas när ingen förälder finnes
             Name = _Name;
         }
     }

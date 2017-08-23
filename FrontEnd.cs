@@ -14,7 +14,7 @@ namespace SubscriptionProject
             PrintOptions();
         }
 
-        static void AddCategory(Company company , string parentCategory , string categoryName)
+        public void AddCategory(Company company , string parentCategory , string categoryName)
         {
             bool isOrphan;
             if (parentCategory == "")
@@ -48,7 +48,7 @@ namespace SubscriptionProject
         public void UserInterface(Company company)
         {
             SplashScreen();
-            AddCategory(company);
+            //AddCategory(company);
         }
 
         private void PrintOptions()
