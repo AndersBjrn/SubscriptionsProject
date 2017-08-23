@@ -14,10 +14,24 @@ namespace SubscriptionProject
             Console.WriteLine("vill);
         }
 
-        static void AddCategory()
+        static void AddCategory(Company company , string parentCategory , string categoryName)
         {
-            Category News = new Category();
+            bool isOrphan;
+            if (parentCategory == "")
+                isOrphan = true;
+            else
+                isOrphan = false;
 
+            if (isOrphan)
+            {
+                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName));
+            }
+            else
+            {
+                Category parent = company.SubscriptionableCategories[parentCategory];
+                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName, parent));
+            }
+            
 
         }
 
