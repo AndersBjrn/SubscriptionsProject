@@ -13,6 +13,8 @@ namespace SubscriptionProject
             FrontEnd frontEnd = new FrontEnd();
             string companyName = frontEnd.GetCompanyName();
             Company company = new Company(companyName);
+
+            frontEnd.UserInterface(company);
         }
     }
 }
