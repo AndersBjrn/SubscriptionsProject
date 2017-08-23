@@ -8,5 +8,6 @@ namespace SubscriptionProject
 {
     class Editor
     {
+        public string Name { get; set; }
     }
 }

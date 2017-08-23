@@ -8,5 +8,6 @@ namespace SubscriptionProject
 {
     class Subscriber
     {
+        public string Name { get; set; }
     }
 }

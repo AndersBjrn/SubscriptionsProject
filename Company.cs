@@ -8,5 +8,7 @@ namespace SubscriptionProject
 {
     class Company
     {
+        public string Name { get; set; }
+        public Dictionary<string, Category> SubscriptionableCategories { get; set; }
     }
 }
