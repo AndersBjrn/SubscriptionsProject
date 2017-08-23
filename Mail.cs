@@ -18,6 +18,7 @@ namespace SubscriptionProject
 
         public void CreateMessage()
         {
+            Message = "";
             List<Article> newArticles = new List<Article>();
             foreach (Category category in Subscriber.Subscription)
             {
@@ -26,6 +27,7 @@ namespace SubscriptionProject
             foreach (Article article in newArticles)
             {
                 Message += article.ToString();
+                Message += Environment.NewLine;
             }
             if (string.IsNullOrEmpty(Message))
             {
