@@ -10,5 +10,10 @@ namespace SubscriptionProject
     {
         public string Name { get; set; }
         public Dictionary<string, Category> SubscriptionableCategories { get; set; }
+
+        public Company(string name)
+        {
+            Name = name;
+        }
     }
 }
