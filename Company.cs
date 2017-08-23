@@ -14,6 +14,7 @@ namespace SubscriptionProject
         public Company(string name)
         {
             Name = name;
+            SubscriptionableCategories = new Dictionary<string, Category>();
         }
     }
 }

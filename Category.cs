@@ -15,11 +15,17 @@ namespace SubscriptionProject
 
         public List<Article> Articles { get; set; }
 
-        public Category(string name)
+        public Category(string name , Category _Parent)
         {
             //Här vill vi att Parent ska sättas.
+            Parent = _Parent;
 
             Name = name;
+        }
+
+        public Category(string _Name)
+        {
+            Name = _Name;
         }
     }
 }

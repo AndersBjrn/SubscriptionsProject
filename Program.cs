@@ -32,6 +32,8 @@ namespace SubscriptionProject
             Editor Lina = new Editor("Lina");
             Article a1 = new Article("Vackert väder idag igen", "Solen sken", "Mycket mycket solsken", Bengt);
             goodNews.Articles.Add(a1);
+            Subscriber subs1 = new Subscriber("Kalle");
+            Subscriber subs2 = new Subscriber("Lisa");
 
         }
     }
