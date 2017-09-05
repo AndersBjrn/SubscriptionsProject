@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,11 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
-            HardCoding(); 
+            HardCoding();
+            
         }
 
+        
         private static void HardCoding()
         {
             string companyName = "TidningsBudet";
