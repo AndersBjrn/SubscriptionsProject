@@ -14,7 +14,7 @@ namespace SubscriptionProject
         public Mail(Subscriber subscriber)
         {
             Subscriber = subscriber;
-            Message = $"Dear {subscriber}\n One or more of your subscribed articles has been updated. Please read below:\n\n";
+            Message = $"Dear {subscriber.Name}\n One or more of your subscribed articles has been updated. Please read below:\n\n";
         }
 
     }
