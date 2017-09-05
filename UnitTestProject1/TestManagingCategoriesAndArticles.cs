@@ -9,7 +9,7 @@ using SubscriptionProject;
 namespace UnitTestProject1
 {
    
-    class TestManagingCategoriesAndArticles
+    public class TestManagingCategoriesAndArticles
     {
         
         public Company CreateCompanyCategoriesAndArticles()
