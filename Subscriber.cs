@@ -21,10 +21,10 @@ namespace SubscriptionProject
         //Denna metod returnerar en lista av artiklar som har uppdaterats(från senaste 7 dagarna) 
         //från de kategorier som Subscriber har valt att prenumerera på
         {
-            List<Article> allArticlesList = new List<Article>();
             List<Article> updatedArticlesList = new List<Article>();
             foreach (Category category in Subscription)
             {
+                List<Article> allArticlesList = new List<Article>();
                 GetArticles(category, allArticlesList);
                 foreach (Article article in allArticlesList)
                 {
