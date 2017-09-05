@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SubscriptionProject;
 
 namespace UnitTestProject1
 {
@@ -14,6 +15,8 @@ namespace UnitTestProject1
              * I framtiden kan vi lämna plats för möjligheten att specifiera tidsintervallet
              * som vi vill ha uppdateringar från
              */
+            SubscriptionProject.Subscriber.GetArticles();
+            
         }
 
         [TestMethod]
