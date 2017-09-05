@@ -20,7 +20,7 @@ namespace SubscriptionProject
             Title = title;
             Summary = summary;
             Text = text;
-            Editor = editor;
+            Editor = editor; // todo: denna editor ska tilldelas denna artikel här!
             CreationDate = DateTime.Now;
             UpdateDate = CreationDate;
         }
