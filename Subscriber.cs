@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    public class Subscriber 
+    public class Subscriber
     {
         public string Name { get; set; }
         public List<Category> Subscription { get; set; } // Denna lista pekar på kategorier som prenumereras på 
@@ -56,7 +56,6 @@ namespace SubscriptionProject
             }
         }
 
-
         bool CheckParents(Category cat)
         {
             if (Subscription.Contains(cat))
@@ -66,9 +65,26 @@ namespace SubscriptionProject
             else if (cat.Parent != null)
             {
                 return CheckParents(cat.Parent);
-            } else
+            }
+            else
             {
                 return false;
+            }
+        }
+
+        void CheckChildren(Category cat)
+        {
+            if (Subscription.Contains(cat))
+            {
+                RemoveCategoryFromSubscription(cat);
+                return;
+            }
+            else if (cat.Subcategories != null)
+            {
+                foreach (Category category in cat.Subcategories)
+                {
+                    CheckChildren(category);
+                }
             }
         }
 
@@ -82,14 +98,7 @@ namespace SubscriptionProject
             {
                 Subscription.Add(c);
             }
-            List<Category> subcats = c.Subcategories;
-            foreach (var cat in subcats)//Om kategorien som lades till redan hade subcategories i listan tas dessa bort
-            {
-                if (Subscription.Contains(cat))
-                {
-                    RemoveCategoryFromSubscription(cat);
-                }
-            }
+            CheckChildren(c);
         }
 
         public void RemoveCategoryFromSubscription(Category c)//Ta bort en kategori från listan
