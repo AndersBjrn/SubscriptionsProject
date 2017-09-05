@@ -74,7 +74,7 @@ namespace SubscriptionProject
 
         public void AddCategoryToSubscription(Category c)//Lägger till en ny kategori om inte den eller en förälder redan finns i listan
         {
-            if (Subscription.Contains(c) || Subscription.Contains(c.Parent))
+            if (CheckParents(c))
             {
                 return;
             }
