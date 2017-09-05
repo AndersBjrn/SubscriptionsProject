@@ -12,7 +12,7 @@ namespace UnitTestProject1
     public class TestManagingCategoriesAndArticles
     {
         
-        public Company CreateCompanyCategoriesAndArticles()
+        public static Company CreateCompanyCategoriesAndArticles()
         {
             Company company = new Company("Test Company");
             company.AddCategory(company, "", "News");

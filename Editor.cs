@@ -13,6 +13,7 @@ namespace SubscriptionProject
 
         public Editor(string name)
         {
+            ArticleList = new List<Article>();
             Name = name;
         }
 
