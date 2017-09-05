@@ -36,7 +36,12 @@ namespace SubscriptionProject
             return allArticlesList;
         }
 
+<<<<<<< HEAD
         public List<Article> GetArticles(Category category, List<Article> articleList)//Rekursiv metod för att gå igenom samtliga artiklar från en kategori och dess underkategorier och returnera dessa artiklar
+=======
+        // todo: Anders, skriv vad dessa gör (vad de får in och vad de gör)!
+        public List<Article> GetArticles(Category category, List<Article> articleList)
+>>>>>>> 5bc851a393362fd4445156cc07a4bfd2bf71138b
         {
             if (category.Articles.Count != 0)
             {
