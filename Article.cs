@@ -22,6 +22,7 @@ namespace SubscriptionProject
             Text = text;
             Editor = editor;
             CreationDate = DateTime.Now;
+            UpdateDate = CreationDate;
         }
 
         public override string ToString()

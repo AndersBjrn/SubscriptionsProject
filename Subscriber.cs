@@ -28,7 +28,7 @@ namespace SubscriptionProject
                 GetArticles(category, allArticlesList);
                 foreach (Article article in allArticlesList)
                 {
-                    bool matchFound = (DateTime.Now - article.CreationDate).TotalDays < 7;
+                    bool matchFound = (DateTime.Now - article.UpdateDate).TotalDays < 7;
                     if (matchFound)
                     {
                         updatedArticlesList.Add(article);
