@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class Subscriber 
+    class Subscriber
     {
         public string Name { get; set; }
         public List<Category> Subscription { get; set; } // Denna lista pekar på kategorier som prenumereras på 
@@ -57,18 +57,37 @@ namespace SubscriptionProject
                 }
             }
         }
-        
-        public void AddCategoryToSubscription(Category c)
+
+        public void AddCategoryToSubscription(Category c)//Lägger till en ny kategori om inte den eller en förälder redan finns i listan
         {
-            if (Subscription.Contains(c))
+            if (Subscription.Contains(c) || Subscription.Contains(c.Parent))
             {
                 return;
             }
             else
             {
-            Subscription.Add(c);
+                Subscription.Add(c);
+            }
+            List<Category> subcats = c.Subcategories;
+            foreach (var cat in subcats)//Om kategorien som lades till redan hade subcategories i listan tas dessa bort
+            {
+                if (Subscription.Contains(cat))
+                {
+                    RemoveCategoryFromSubscription(cat);
+                }
             }
         }
 
+        public void RemoveCategoryFromSubscription(Category c)//Ta bort en kategori från listan
+        {
+            if (!Subscription.Contains(c))
+            {
+                return;
+            }
+            else
+            {
+                Subscription.Remove(c);
+            }
+        }
     }
 }

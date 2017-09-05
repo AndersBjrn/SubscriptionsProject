@@ -64,6 +64,10 @@ namespace SubscriptionProject
             subs2.Subscription.Add(aboutUs);
 
             List<Article> lista =  new List<Article>(subs1.GetUpdatedArticles());
+            foreach (var item in lista) 
+            {
+                Console.WriteLine(item.ToString());
+            }
             subs1.AddCategoryToSubscription(environment);
         }
     }
