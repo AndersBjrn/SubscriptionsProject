@@ -14,26 +14,7 @@ namespace SubscriptionProject
             PrintOptions();
         }
 
-        public void AddCategory(Company company , string parentCategory , string categoryName)
-        {
-            bool isOrphan;
-            if (parentCategory == "")
-                isOrphan = true;
-            else
-                isOrphan = false;
-
-            if (isOrphan)
-            {
-                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName));
-            }
-            else
-            {
-                Category parent = company.SubscriptionableCategories[parentCategory];
-                company.SubscriptionableCategories.Add(categoryName, new Category(categoryName, parent));
-            }
-            
-
-        }
+        
 
         static void AddArticle()
         {

@@ -25,17 +25,19 @@ namespace SubscriptionProject
         /*
         private static void HardCoding()
         {
-            frontEnd.AddCategory(company, "", "News");
-            frontEnd.AddCategory(company, "News", "Bad news");
-            frontEnd.AddCategory(company, "News", "Good news");
+            string companyName = "TidningsBudet";
+            Company company = new Company(companyName);
+            company.AddCategory(company, "", "News");
+            company.AddCategory(company, "News", "Bad news");
+            company.AddCategory(company, "News", "Good news");
             Category news = company.SubscriptionableCategories["News"];
             Category badNews = company.SubscriptionableCategories["Bad news"];
             Category goodNews = company.SubscriptionableCategories["Good news"];
 
 
-            frontEnd.AddCategory(company, "", "About us");
-            frontEnd.AddCategory(company, "About us", "Careers");
-            frontEnd.AddCategory(company, "About us", "Environment");
+            company.AddCategory(company, "", "About us");
+            company.AddCategory(company, "About us", "Careers");
+            company.AddCategory(company, "About us", "Environment");
 
             Category aboutUs = company.SubscriptionableCategories["About us"];
             Category career = company.SubscriptionableCategories["Careers"];
@@ -63,6 +65,7 @@ namespace SubscriptionProject
             badNews.Articles.Add(a7);
             environment.Articles.Add(a8);
             goodNews.Articles.Add(a9);
+
             Subscriber subs1 = new Subscriber("Kalle");
             subs1.Subscription.Add(news);
             subs1.Subscription.Add(career);
