@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class Subscriber
+    public class Subscriber 
     {
         public string Name { get; set; }
         public List<Category> Subscription { get; set; } // Denna lista pekar på kategorier som prenumereras på 
