@@ -6,7 +6,40 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class GenerateMail
+    public class GenerateMail
     {
+        public void CreateMessage(Subscriber subscriber, List<Article> updatedArticles)
+        {
+            Mail email = new Mail(subscriber);
+            
+            //foreach (Category category in Subscriber.Subscription)
+            //{
+            //    newArticles = Subscriber.GetUpdatedArticles();
+            //}
+            foreach (Article article in updatedArticles)
+            {
+                email.Message += article.ToString();
+                email.Message += Environment.NewLine;
+            }
+            //if (string.IsNullOrEmpty(Message))
+            //{
+            //    Console.WriteLine("No new articles");
+            //}
+            //else
+            //{
+            SendMail(email.Message);
+            //}
+        }
+        public void CreateMessage(Subscriber subscriber)
+        {
+            string message = $"Dear {subscriber.Name}\n No new articles from your subscription this week.";
+            SendMail(message);
+        }
+
+        private void SendMail(string message)
+        {
+            //Console.WriteLine("Mail to " + Subscriber.Name);
+            Console.WriteLine(message);
+        }
     }
 }

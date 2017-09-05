@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class Editor
+    public class Editor
     {
         public string Name { get; set; }
         public List<Article> ArticleList { get; set; }
