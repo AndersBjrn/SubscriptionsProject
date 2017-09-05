@@ -38,8 +38,6 @@ namespace SubscriptionProject
                 Category parent = company.SubscriptionableCategories[parentCategory];
                 company.SubscriptionableCategories.Add(categoryName, new Category(categoryName, parent));
             }
-
-
         }
     }
 }

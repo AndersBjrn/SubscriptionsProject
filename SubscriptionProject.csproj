@@ -47,6 +47,7 @@
     <Compile Include="Company.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="FrontEnd.cs" />
+    <Compile Include="GenerateMail.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
