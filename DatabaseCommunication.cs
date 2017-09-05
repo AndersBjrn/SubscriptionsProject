@@ -19,14 +19,14 @@ namespace SubscriptionProject
                 var reader = com.ExecuteReader();
             }
         }
-        internal static void SearchForInfo(string connstr)
+        internal static void SearchForInfo(string connstr, string table)
         {
             string column;
             string input;
             //DecideParameter("Vad vill du söka på", "Sökord", out column, out input);
 
             using (var con = new SqlConnection(connstr))
-            using (var com1 = new SqlCommand($"Select * from Customer Where {column} = {input}", con))
+            using (var com1 = new SqlCommand($"Select * from Customer Where ", con))
             {
                 con.Open();
                 var reader = com1.ExecuteReader();
