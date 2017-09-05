@@ -19,7 +19,7 @@ namespace UnitTestProject1
 
             //Company TestCompany = new Company("Test Company");
             //TestCompany.AddCategory()
-            SubscriptionProject.Subscriber.GetArticles(category, articleList);
+            //SubscriptionProject.Subscriber.GetArticles(category, articleList);
             
         }
 
