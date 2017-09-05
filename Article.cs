@@ -13,6 +13,7 @@ namespace SubscriptionProject
         public string Summary { get; set; }
         public string Text { get; set; }
         public DateTime CreationDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
         public Article(string title, string summary, string text, Editor editor)
         {

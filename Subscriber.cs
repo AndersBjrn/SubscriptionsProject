@@ -25,7 +25,7 @@ namespace SubscriptionProject
             List<Article> updatedArticlesList = new List<Article>();
             foreach (Category category in Subscription)
             {
-                GetAllArticlesFromCategory(category, allArticlesList);
+                GetArticles(category, allArticlesList);
                 foreach (Article article in allArticlesList)
                 {
                     bool matchFound = (DateTime.Now - article.CreationDate).TotalDays < 7;
@@ -38,9 +38,7 @@ namespace SubscriptionProject
             return updatedArticlesList;
         }
 
-        public void GetAllArticlesFromCategory(Category category, List<Article> articleList)
-        //Rekursiv metod för att gå igenom samtliga artiklar från en kategori 
-        //och dess underkategorier och returnera dessa artiklar
+        public void GetArticles(Category category, List<Article> articleList)//Rekursiv metod för att gå igenom samtliga artiklar från en kategori och dess underkategorier och returnera dessa artiklar
         {
             if (category.Articles.Count != 0)
             {
@@ -53,7 +51,7 @@ namespace SubscriptionProject
             {
                 foreach (Category c in category.Subcategories)
                 {
-                    GetAllArticlesFromCategory(c, articleList);
+                    GetArticles(c, articleList);
                 }
             }
         }
