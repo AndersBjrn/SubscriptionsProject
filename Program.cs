@@ -10,6 +10,8 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
+            
+
             FrontEnd frontEnd = new FrontEnd();
             string companyName = frontEnd.GetCompanyName();
             Company company = new Company(companyName);
@@ -61,6 +63,8 @@ namespace SubscriptionProject
             subs2.Subscription.Add(goodNews);
             subs2.Subscription.Add(aboutUs);
 
+            List<Article> lista =  new List<Article>(subs1.GetUpdatedArticles());
+            subs1.AddCategoryToSubscription(environment);
         }
     }
 }
