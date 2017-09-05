@@ -13,7 +13,7 @@ namespace SubscriptionProject
         /*Detta dictionary pekar på kategorier med nyckeln som är namnet på kategorien. 
          * Denna fylls på från konstruktorn i FrontEnd. Kanske borde flyttas till
          * Category? 
-         * /
+         */
 
         public Company(string name)
         {
