@@ -15,17 +15,24 @@ namespace SubscriptionProject
             FrontEnd frontEnd = new FrontEnd();
             string companyName = frontEnd.GetCompanyName();
             Company company = new Company(companyName);
-
+            HardCoding();
             //frontEnd.UserInterface(company);
 
-            frontEnd.AddCategory(company, "" , "News");
+            
+
+           
+        }
+
+        private static void HardCoding()
+        {
+            frontEnd.AddCategory(company, "", "News");
             frontEnd.AddCategory(company, "News", "Bad news");
             frontEnd.AddCategory(company, "News", "Good news");
             Category news = company.SubscriptionableCategories["News"];
             Category badNews = company.SubscriptionableCategories["Bad news"];
             Category goodNews = company.SubscriptionableCategories["Good news"];
-            
-            
+
+
             frontEnd.AddCategory(company, "", "About us");
             frontEnd.AddCategory(company, "About us", "Careers");
             frontEnd.AddCategory(company, "About us", "Environment");
@@ -34,7 +41,7 @@ namespace SubscriptionProject
             Category career = company.SubscriptionableCategories["Careers"];
             Category environment = company.SubscriptionableCategories["Environment"];
 
-            
+
             Editor Håkan = new Editor("Håkan");
             Editor Bengt = new Editor("Bengt");
             Editor Lina = new Editor("Lina");
@@ -63,8 +70,8 @@ namespace SubscriptionProject
             subs2.Subscription.Add(goodNews);
             subs2.Subscription.Add(aboutUs);
 
-            List<Article> lista =  new List<Article>(subs1.GetUpdatedArticles());
-            foreach (var item in lista) 
+            List<Article> lista = new List<Article>(subs1.GetUpdatedArticles());
+            foreach (var item in lista)
             {
                 Console.WriteLine(item.ToString());
             }
