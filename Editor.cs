@@ -15,5 +15,11 @@ namespace SubscriptionProject
         {
             Name = name;
         }
+
+        public void AddArticleToEditorList(Article a)
+        {
+            ArticleList.Add(a);
+        }
+
     }
 }
