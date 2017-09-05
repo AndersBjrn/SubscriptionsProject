@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SubscriptionProject;
+using System.Collections.Generic;
 
 namespace UnitTestProject1
 {
@@ -19,7 +20,9 @@ namespace UnitTestProject1
 
             //Company TestCompany = new Company("Test Company");
             //TestCompany.AddCategory()
-            SubscriptionProject.Subscriber.GetArticles(category, articleList);
+            Company company = TestManagingCategoriesAndArticles.CreateCompanyCategoriesAndArticles();
+            Subscriber subscriber = new Subscriber("Bertil");
+            List<Article> listOfArticles = subscriber.GetUpdatedArticles();
             
         }
 

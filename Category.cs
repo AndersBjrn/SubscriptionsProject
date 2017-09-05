@@ -18,6 +18,8 @@ namespace SubscriptionProject
         public Category(string name , Category _Parent)
         {
             // denna konstruktorn åkallas när det finns en förälder
+            Articles = new List<Article>();
+            Subcategories = new List<Category>();
             Parent = _Parent;
             Parent.Subcategories.Add(this);
             Name = name;
@@ -26,6 +28,8 @@ namespace SubscriptionProject
         public Category(string _Name)
         {
             // denna konstruktorn åkallas när ingen förälder finnes
+            Articles = new List<Article>();
+            Subcategories = new List<Category>();
             Name = _Name;
         }
 

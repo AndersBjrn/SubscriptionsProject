@@ -11,11 +11,9 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
-            HardCoding();
-            
+            HardCoding(); 
         }
 
-        
         private static void HardCoding()
         {
             string companyName = "TidningsBudet";
@@ -79,6 +77,13 @@ namespace SubscriptionProject
                 GenerateMail.CreateMessage(subs2, listaSubs2);
 
 
+            List<Article> lista = new List<Article>(subs1.GetUpdatedArticles());
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            subs1.AddCategoryToSubscription(environment);
         }
+        */
     }
 }

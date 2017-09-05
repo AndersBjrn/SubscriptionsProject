@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using SubscriptionProject;
 
+
 namespace UnitTestProject1
 {
-    class TestManagingCategoriesAndArticles
+   
+    public class TestManagingCategoriesAndArticles
     {
-        public Company CreateCompanyCategoriesAndArticles()
+        
+        public static Company CreateCompanyCategoriesAndArticles()
         {
             Company company = new Company("Test Company");
             company.AddCategory(company, "", "News");
@@ -27,6 +30,7 @@ namespace UnitTestProject1
             company.SubscriptionableCategories["Bad news"].AddArticle("Dåliga nyheter", "Dåliga saker", "Dåliga saker hände", Lina);
             company.SubscriptionableCategories["Careers"].AddArticle("Testartikel 9", "nio", "jag orkar inte mer", Bengt);
             company.SubscriptionableCategories["Environment"].AddArticle("En enviromentartikel", "Miljön", "Jag gillar träd", Lina);
+
             return company;
         }
     }
