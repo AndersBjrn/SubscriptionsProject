@@ -24,7 +24,7 @@ namespace UnitTestProject1
             Editor Lina = new Editor("Lina");
 
             company.SubscriptionableCategories["Good news"].AddArticle("Vackert väder idag igen", "Solen sken", "Mycket mycket solsken", Bengt);
-            company.SubscriptionableCategories["Bad news"].AddArticles("Dåliga nyheter", "Dåliga saker", "Dåliga saker hände", Lina);
+            company.SubscriptionableCategories["Bad news"].AddArticle("Dåliga nyheter", "Dåliga saker", "Dåliga saker hände", Lina);
             company.SubscriptionableCategories["Careers"].AddArticle("Testartikel 9", "nio", "jag orkar inte mer", Bengt);
             company.SubscriptionableCategories["Environment"].AddArticle("En enviromentartikel", "Miljön", "Jag gillar träd", Lina);
             return company;
