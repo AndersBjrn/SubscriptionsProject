@@ -35,6 +35,7 @@ namespace SubscriptionProject
             return articleList;
         }
 
+        // todo: Anders, skriv vad dessa gör (vad de får in och vad de gör)!
         public List<Article> GetArticles(Category category, List<Article> articleList)
         {
             if (category.Articles.Count != 0)
