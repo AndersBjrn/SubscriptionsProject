@@ -10,13 +10,13 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
+            HardCoding();
             
 
-            FrontEnd frontEnd = new FrontEnd();
-            string companyName = frontEnd.GetCompanyName();
-            Company company = new Company(companyName);
-            HardCoding();
-            //frontEnd.UserInterface(company);
+            
+            
+            
+            
 
             
 
@@ -25,17 +25,19 @@ namespace SubscriptionProject
 
         private static void HardCoding()
         {
-            frontEnd.AddCategory(company, "", "News");
-            frontEnd.AddCategory(company, "News", "Bad news");
-            frontEnd.AddCategory(company, "News", "Good news");
+            string companyName = "TidningsBudet";
+            Company company = new Company(companyName);
+            company.AddCategory(company, "", "News");
+            company.AddCategory(company, "News", "Bad news");
+            company.AddCategory(company, "News", "Good news");
             Category news = company.SubscriptionableCategories["News"];
             Category badNews = company.SubscriptionableCategories["Bad news"];
             Category goodNews = company.SubscriptionableCategories["Good news"];
 
 
-            frontEnd.AddCategory(company, "", "About us");
-            frontEnd.AddCategory(company, "About us", "Careers");
-            frontEnd.AddCategory(company, "About us", "Environment");
+            company.AddCategory(company, "", "About us");
+            company.AddCategory(company, "About us", "Careers");
+            company.AddCategory(company, "About us", "Environment");
 
             Category aboutUs = company.SubscriptionableCategories["About us"];
             Category career = company.SubscriptionableCategories["Careers"];
@@ -63,6 +65,7 @@ namespace SubscriptionProject
             badNews.Articles.Add(a7);
             environment.Articles.Add(a8);
             goodNews.Articles.Add(a9);
+
             Subscriber subs1 = new Subscriber("Kalle");
             subs1.Subscription.Add(news);
             subs1.Subscription.Add(career);
@@ -70,12 +73,17 @@ namespace SubscriptionProject
             subs2.Subscription.Add(goodNews);
             subs2.Subscription.Add(aboutUs);
 
-            List<Article> lista = new List<Article>(subs1.GetUpdatedArticles());
-            foreach (var item in lista)
+            List<Article> listaSubs1 = new List<Article>(subs1.GetUpdatedArticles());
+            if
+            List<Article> listaSubs2 = new List<Article>(subs2.GetUpdatedArticles());
+
+            GenerateMail.CreateMessage(subs1);
+
+            foreach (var article in lista)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(article.ToString());
             }
-            subs1.AddCategoryToSubscription(environment);
+
         }
     }
 }
