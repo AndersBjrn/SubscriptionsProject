@@ -33,6 +33,7 @@ namespace UnitTestProject1
             List<Article> listOfAnnasArticles = subscriber2.GetUpdatedArticles();
 
             GenerateMail.CreateMessage(subscriber, listOfArticles);
+            GenerateMail.CreateMessage(subscriber2, listOfAnnasArticles);
             
         }
 
