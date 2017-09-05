@@ -29,8 +29,14 @@ namespace SubscriptionProject
             Name = _Name;
         }
 
-        // Det finns en funktion AddCategory i FrontEnd. Vi borde flytta den hit
+        public void AddArticle(string title, string summary, string text, Editor editor)
+        {
+            Articles.Add(new Article(title, summary, text, editor));
+        }
 
-        //TODO: implementera metoderna getAllParents och getAllChildren, funktioner som returnerar alla föräldrar och barn för en viss kategori
+        public void AddArticle(Article a)
+        {
+            Articles.Add(a);
+        }
     }
 }
