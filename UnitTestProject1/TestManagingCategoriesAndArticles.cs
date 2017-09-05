@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using SubscriptionProject;
 
+
 namespace UnitTestProject1
 {
-    class TestManagingCategoriesAndArticles
+   
+    public class TestManagingCategoriesAndArticles
     {
-        public Company CreateCompanyCategoriesAndArticles()
+        
+        public static Company CreateCompanyCategoriesAndArticles()
         {
             Company company = new Company("Test Company");
             company.AddCategory(company, "", "News");

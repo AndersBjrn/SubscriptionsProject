@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +11,7 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
-            
-
-            FrontEnd frontEnd = new FrontEnd();
-            string companyName = frontEnd.GetCompanyName();
-            Company company = new Company(companyName);
-            //HardCoding();
-            //frontEnd.UserInterface(company);
-
-            
-
-           
+            //HardCoding(); 
         }
         /*
         private static void HardCoding()
@@ -72,6 +63,19 @@ namespace SubscriptionProject
             Subscriber subs2 = new Subscriber("Lisa");
             subs2.Subscription.Add(goodNews);
             subs2.Subscription.Add(aboutUs);
+
+            List<Article> listaSubs1 = new List<Article>(subs1.GetUpdatedArticles());
+            if (listaSubs1.Count == 0)
+                GenerateMail.CreateMessage(subs1);
+            else
+                GenerateMail.CreateMessage(subs1, listaSubs1);
+
+            List<Article> listaSubs2 = new List<Article>(subs2.GetUpdatedArticles());
+            if (listaSubs2.Count == 0)
+                GenerateMail.CreateMessage(subs2);
+            else
+                GenerateMail.CreateMessage(subs2, listaSubs2);
+
 
             List<Article> lista = new List<Article>(subs1.GetUpdatedArticles());
             foreach (var item in lista)
