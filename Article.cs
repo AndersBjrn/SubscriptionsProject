@@ -20,9 +20,10 @@ namespace SubscriptionProject
             Title = title;
             Summary = summary;
             Text = text;
-            Editor = editor; // todo: denna editor ska tilldelas denna artikel här!
+            Editor = editor;
             CreationDate = DateTime.Now;
             UpdateDate = CreationDate;
+            editor.AddArticleToEditorList(this);
         }
 
         public override string ToString()
