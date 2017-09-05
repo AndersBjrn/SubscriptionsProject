@@ -18,7 +18,7 @@ namespace SubscriptionProject
             //}
             foreach (Article article in updatedArticles)
             {
-                email.Message += article.ToString();
+                email.Message += article.ToString(); // Detta blir SubscriptionProject.Subscriber
                 email.Message += Environment.NewLine;
             }
             //if (string.IsNullOrEmpty(Message))

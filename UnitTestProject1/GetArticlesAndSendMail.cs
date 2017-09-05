@@ -22,16 +22,16 @@ namespace UnitTestProject1
             //TestCompany.AddCategory()
             Company company = TestManagingCategoriesAndArticles.CreateCompanyCategoriesAndArticles();
             Subscriber subscriber = new Subscriber("Bertil");
+            subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["Good news"]);
+            subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["About us"]);
             List<Article> listOfArticles = subscriber.GetUpdatedArticles();
+
+
+            GenerateMail.CreateMessage(subscriber, listOfArticles);
             
         }
 
-        [TestMethod]
-        public void TestGetArticles()
-        {
-            /* Denna funktion ska hämta hem alla artiklar från en kategori och dess underkategorier */
 
-        }
 
         [TestMethod]
         public void TestCreateMail()
@@ -41,6 +41,7 @@ namespace UnitTestProject1
              * sätta samman ett mail som innehåller efterfrågad information, samt
              * skicka ut mailet */
 
+            
         }
 
         
