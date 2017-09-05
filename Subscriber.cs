@@ -9,7 +9,7 @@ namespace SubscriptionProject
     class Subscriber
     {
         public string Name { get; set; }
-        public List<Category> Subscription { get; set; }
+        public List<Category> Subscription { get; set; } // Denna lista pekar på kategorier som prenumereras på 
 
         public Subscriber(string name)
         {
@@ -54,5 +54,7 @@ namespace SubscriptionProject
             }
             return articleList;
         }
+
+        //Vi borde ha en AddCategoryToSubscription-metod här
     }
 }
