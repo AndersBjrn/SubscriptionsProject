@@ -28,5 +28,7 @@ namespace SubscriptionProject
             // denna konstruktorn åkallas när ingen förälder finnes
             Name = _Name;
         }
+
+        // Det finns en funktion AddCategory i FrontEnd. Vi borde flytta den hit
     }
 }
