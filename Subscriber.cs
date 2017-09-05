@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubscriptionProject
 {
-    class Subscriber 
+    class Subscriber
     {
         public string Name { get; set; }
         public List<Category> Subscription { get; set; } // Denna lista pekar på kategorier som prenumereras på 
@@ -17,26 +17,25 @@ namespace SubscriptionProject
             Subscription = new List<Category>();
         }
 
-        public List<Article> GetUpdatedArticles()//Denna metod returnerar en lista av artiklar som har uppdaterats från de kategorier som Subscriber har valt att prenumerera på
+        public List<Article> GetUpdates()
         {
-            List<Article> allArticlesList = new List<Article>();
-            List<Article> updatedArticlesList = new List<Article>();
+            List<Article> articleList = new List<Article>();
             foreach (Category category in Subscription)
             {
-                allArticlesList = GetArticles(category, allArticlesList);
-                foreach (Article article in allArticlesList)
+                articleList = GetArticles(category, articleList);
+                foreach (Article article in articleList)
                 {
                     bool matchFound = (DateTime.Now - article.CreationDate).TotalDays < 7;
                     if (matchFound)
                     {
-                        updatedArticlesList.Add(article);
+                        articleList.Add(article);
                     }
                 }
             }
-            return allArticlesList;
+            return articleList;
         }
 
-        public List<Article> GetArticles(Category category, List<Article> articleList)//Rekursiv metod för att gå igenom samtliga artiklar från en kategori och dess underkategorier och returnera dessa artiklar
+        public List<Article> GetArticles(Category category, List<Article> articleList)
         {
             if (category.Articles.Count != 0)
             {
@@ -50,7 +49,7 @@ namespace SubscriptionProject
                 foreach (Category c in category.Subcategories)
                 {
                     List<Article> temp = GetArticles(c, articleList);
-                    temp.ForEach(article => articleList.Add(article));
+                    temp.ForEach(x => articleList.Add(x));
                 }
             }
             return articleList;

@@ -22,7 +22,7 @@ namespace SubscriptionProject
             List<Article> newArticles = new List<Article>();
             foreach (Category category in Subscriber.Subscription)
             {
-                newArticles = Subscriber.GetUpdatedArticles();
+                newArticles = Subscriber.GetUpdates();
             }
             foreach (Article article in newArticles)
             {
