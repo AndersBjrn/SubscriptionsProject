@@ -21,7 +21,10 @@ namespace UnitTestProject1
             //Company TestCompany = new Company("Test Company");
             //TestCompany.AddCategory()
             
+            // Prepare
             Company company = TestManagingCategoriesAndArticles.CreateCompanyCategoriesAndArticles();
+
+            //Execute
             Subscriber subscriber = new Subscriber("Bertil");
             subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["Good news"]);
             subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["About us"]);
@@ -31,9 +34,14 @@ namespace UnitTestProject1
             subscriber2.AddCategoryToSubscription(company.SubscriptionableCategories["Environment"]);
             subscriber2.AddCategoryToSubscription(company.SubscriptionableCategories["Test1"]);
             List<Article> listOfAnnasArticles = subscriber2.GetUpdatedArticles();
+            Mail bertilsEmail = GenerateMail.CreateMessage(subscriber, listOfArticles);
+            Mail annasEmail = GenerateMail.CreateMessage(subscriber2, listOfAnnasArticles);
+            Mail emptyEmail = GenerateMail.CreateMessage(subscriber , new List<Article>());
+            
 
-            GenerateMail.CreateMessage(subscriber, listOfArticles);
-            GenerateMail.CreateMessage(subscriber2, listOfAnnasArticles);
+            // Assert
+            Assert.AreEqual(3, listOfArticles.Count);
+            Assert.AreEqual(2, listOfAnnasArticles.Count);
             
         }
 
