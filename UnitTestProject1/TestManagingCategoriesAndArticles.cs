@@ -21,6 +21,11 @@ namespace UnitTestProject1
             company.AddCategory(company, "", "About us");
             company.AddCategory(company, "About us", "Careers");
             company.AddCategory(company, "About us", "Environment");
+            company.AddCategory(company, "", "Test1");
+            company.AddCategory(company, "Test1", "Test2");
+            company.AddCategory(company, "Test2", "Test3");
+            company.AddCategory(company, "Test3", "Test3-1");
+            company.AddCategory(company, "Test3", "Test3-2");
 
             Editor Håkan = new Editor("Håkan");
             Editor Bengt = new Editor("Bengt");
@@ -30,7 +35,7 @@ namespace UnitTestProject1
             company.SubscriptionableCategories["Bad news"].AddArticle("Dåliga nyheter", "Dåliga saker", "Dåliga saker hände", Lina);
             company.SubscriptionableCategories["Careers"].AddArticle("Testartikel 9", "nio", "jag orkar inte mer", Bengt);
             company.SubscriptionableCategories["Environment"].AddArticle("En enviromentartikel", "Miljön", "Jag gillar träd", Lina);
-
+            company.SubscriptionableCategories["Test3-1"].AddArticle("Svenska landskapsapor", "Du kommer aldrig att tro detta, att...", "... det finns egentligen inga landskapsapor. De är bara påhittade", Håkan);
             return company;
         }
     }

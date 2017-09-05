@@ -9,7 +9,7 @@ namespace UnitTestProject1
     public class GetArticlesAndSendMail
     {
         [TestMethod]
-        public void TestGetUpdates()
+        public void TestGetUpdates1()
         {
             /* Mål för testet: Vi har en subscriber med en lista av kategorier. När vi 
              * kallar på GetUpdates så ska vi få alla uppdateringar de senaste sju dagarn
@@ -20,15 +20,25 @@ namespace UnitTestProject1
 
             //Company TestCompany = new Company("Test Company");
             //TestCompany.AddCategory()
+            
             Company company = TestManagingCategoriesAndArticles.CreateCompanyCategoriesAndArticles();
             Subscriber subscriber = new Subscriber("Bertil");
             subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["Good news"]);
             subscriber.AddCategoryToSubscription(company.SubscriptionableCategories["About us"]);
             List<Article> listOfArticles = subscriber.GetUpdatedArticles();
 
+            Subscriber subscriber2 = new Subscriber("Anna");
+            subscriber2.AddCategoryToSubscription(company.SubscriptionableCategories["Environment"]);
+            subscriber2.AddCategoryToSubscription(company.SubscriptionableCategories["Test1"]);
+            List<Article> listOfAnnasArticles = subscriber2.GetUpdatedArticles();
 
             GenerateMail.CreateMessage(subscriber, listOfArticles);
             
+        }
+
+        public void TestGetUpdates2()
+        {
+
         }
 
 
