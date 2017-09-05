@@ -15,14 +15,14 @@ namespace SubscriptionProject
             FrontEnd frontEnd = new FrontEnd();
             string companyName = frontEnd.GetCompanyName();
             Company company = new Company(companyName);
-            HardCoding();
+            //HardCoding();
             //frontEnd.UserInterface(company);
 
             
 
            
         }
-
+        /*
         private static void HardCoding()
         {
             frontEnd.AddCategory(company, "", "News");
@@ -77,5 +77,6 @@ namespace SubscriptionProject
             }
             subs1.AddCategoryToSubscription(environment);
         }
+        */
     }
 }
