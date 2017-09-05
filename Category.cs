@@ -30,5 +30,7 @@ namespace SubscriptionProject
         }
 
         // Det finns en funktion AddCategory i FrontEnd. Vi borde flytta den hit
+
+        //TODO: implementera metoderna getAllParents och getAllChildren, funktioner som returnerar alla föräldrar och barn för en viss kategori
     }
 }
