@@ -14,35 +14,8 @@ namespace SubscriptionProject
         public Mail(Subscriber subscriber)
         {
             Subscriber = subscriber;
+            Message = $"Dear {subscriber}\n One or more of your subscribed articles has been updated. Please read below:";
         }
 
-        public void CreateMessage()
-        {
-            Message = "";
-            List<Article> newArticles = new List<Article>();
-            foreach (Category category in Subscriber.Subscription)
-            {
-                newArticles = Subscriber.GetUpdatedArticles();
-            }
-            foreach (Article article in newArticles)
-            {
-                Message += article.ToString();
-                Message += Environment.NewLine;
-            }
-            if (string.IsNullOrEmpty(Message))
-            {
-                Console.WriteLine("No new articles");
-            }
-            else
-            {
-                SendMail();
-            }
-        }
-
-        private void SendMail()
-        {
-            Console.WriteLine("Mail to " + Subscriber.Name);
-            Console.WriteLine(Message);
-        }
     }
 }
