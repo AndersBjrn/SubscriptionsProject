@@ -10,17 +10,7 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
-            HardCoding();
-            
-
-            
-            
-            
-            
-
-            
-
-           
+            HardCoding(); 
         }
 
         private static void HardCoding()
@@ -74,15 +64,17 @@ namespace SubscriptionProject
             subs2.Subscription.Add(aboutUs);
 
             List<Article> listaSubs1 = new List<Article>(subs1.GetUpdatedArticles());
-            if
+            if (listaSubs1.Count == 0)
+                GenerateMail.CreateMessage(subs1);
+            else
+                GenerateMail.CreateMessage(subs1, listaSubs1);
+
             List<Article> listaSubs2 = new List<Article>(subs2.GetUpdatedArticles());
+            if (listaSubs2.Count == 0)
+                GenerateMail.CreateMessage(subs2);
+            else
+                GenerateMail.CreateMessage(subs2, listaSubs2);
 
-            GenerateMail.CreateMessage(subs1);
-
-            foreach (var article in lista)
-            {
-                Console.WriteLine(article.ToString());
-            }
 
         }
     }
