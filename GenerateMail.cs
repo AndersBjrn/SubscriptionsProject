@@ -8,18 +8,29 @@ namespace SubscriptionProject
 {
     public class GenerateMail
     {
-        public static void CreateMessage(Subscriber subscriber, List<Article> updatedArticles)
+        public static Mail CreateMessage(Subscriber subscriber, List<Article> updatedArticles)
         {
             Mail email = new Mail(subscriber);
-            
+
+
             //foreach (Category category in Subscriber.Subscription)
             //{
             //    newArticles = Subscriber.GetUpdatedArticles();
             //}
-            foreach (Article article in updatedArticles)
+            if (updatedArticles.Count == 0)
             {
-                email.Message += article.ToString(); // Detta blir SubscriptionProject.Subscriber
-                email.Message += Environment.NewLine;
+                email.Message = $"Dear {subscriber.Name}\n No new articles from your subscription this week.";
+            }
+            else
+            {
+                email.Message = $"Dear {subscriber.Name}\n One or more of your subscribed articles has been updated. Please read below:\n\n";
+
+
+                foreach (Article article in updatedArticles)
+                {
+                    email.Message += article.ToString(); // Detta blir SubscriptionProject.Subscriber
+                    email.Message += Environment.NewLine;
+                }
             }
             //if (string.IsNullOrEmpty(Message))
             //{
@@ -27,14 +38,18 @@ namespace SubscriptionProject
             //}
             //else
             //{
-            SendMail(email.Message);
+            //SendMail(email.Message);
             //}
+            return email;
         }
-        public static void CreateMessage(Subscriber subscriber)
-        {
-            string message = $"Dear {subscriber.Name}\n No new articles from your subscription this week.";
-            SendMail(message);
-        }
+        //public static Mail CreateMessage(Subscriber subscriber)
+        //{
+        //    Mail email = new Mail(subscriber);
+        //    string message = $"Dear {subscriber.Name}\n No new articles from your subscription this week.";
+        //    email.Message = message;
+        //    //SendMail(message);
+        //    return email;
+        //}
 
         private static void SendMail(string message)
         {
