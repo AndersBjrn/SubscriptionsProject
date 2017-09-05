@@ -9,24 +9,24 @@ namespace SubscriptionProject
 {
     class DatabaseCommunication
     {
-        private static void CallDb(string table)
+        private static void SelectAllSubscribers(List<string> listOfSubscribers)
         {
             var connstr = "Server = (localdb)\\mssqllocaldb; Database = SupscriptionDB";
             using (var con = new SqlConnection(connstr))
-            using (var com = new SqlCommand($"Select * From {table};", con))
+            using (var com = new SqlCommand($"Select Name From Subscribers;", con))
             {
                 con.Open();
                 var reader = com.ExecuteReader();
+                while (reader.Read())
+                    listOfSubscribers.Add(reader[1].ToString());
             }
         }
-        internal static void SearchForInfo(string connstr, string table)
-        {
-            string column;
-            string input;
-            //DecideParameter("Vad vill du söka på", "Sökord", out column, out input);
 
+        internal static void SearchForArticles(List<string> listOfSubscribers, Dictionary<string, DateTime> listOfArticles)
+        {
+            var connstr = "Server = (localdb)\\mssqllocaldb; Database = SupscriptionDB";
             using (var con = new SqlConnection(connstr))
-            using (var com1 = new SqlCommand($"Select * from Customer Where ", con))
+            using (var com1 = new SqlCommand($"Select Article.Name, Article.Date from Customer Where ", con))
             {
                 con.Open();
                 var reader = com1.ExecuteReader();
