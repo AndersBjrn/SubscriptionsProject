@@ -11,9 +11,9 @@ namespace SubscriptionProject
     {
         static void Main(string[] args)
         {
-            HardCoding(); 
+            //HardCoding(); 
         }
-
+        /*
         private static void HardCoding()
         {
             string companyName = "TidningsBudet";
