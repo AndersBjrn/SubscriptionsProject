@@ -56,6 +56,22 @@ namespace SubscriptionProject
             }
         }
 
+
+        bool CheckParents(Category cat)
+        {
+            if (Subscription.Contains(cat))
+            {
+                return true;
+            }
+            else if (cat.Parent != null)
+            {
+                return CheckParents(cat.Parent);
+            } else
+            {
+                return false;
+            }
+        }
+
         public void AddCategoryToSubscription(Category c)//Lägger till en ny kategori om inte den eller en förälder redan finns i listan
         {
             if (Subscription.Contains(c) || Subscription.Contains(c.Parent))
