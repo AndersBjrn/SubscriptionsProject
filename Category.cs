@@ -29,9 +29,14 @@ namespace SubscriptionProject
             Name = _Name;
         }
 
-        public void AddArticle()
+        public void AddArticle(string title, string summary, string text, Editor editor)
         {
+            Articles.Add(new Article(title, summary, text, editor));
+        }
 
+        public void AddArticle(Article a)
+        {
+            Articles.Add(a);
         }
     }
 }
