@@ -23,7 +23,7 @@ namespace SubscriptionProject
             List<Article> updatedArticlesList = new List<Article>();
             foreach (Category category in Subscription)
             {
-                allArticlesList = GetArticles(category, allArticlesList);
+                GetArticles(category, allArticlesList);
                 foreach (Article article in allArticlesList)
                 {
                     bool matchFound = (DateTime.Now - article.CreationDate).TotalDays < 7;
@@ -33,10 +33,10 @@ namespace SubscriptionProject
                     }
                 }
             }
-            return allArticlesList;
+            return updatedArticlesList;
         }
 
-        public List<Article> GetArticles(Category category, List<Article> articleList)//Rekursiv metod för att gå igenom samtliga artiklar från en kategori och dess underkategorier och returnera dessa artiklar
+        public void GetArticles(Category category, List<Article> articleList)//Rekursiv metod för att gå igenom samtliga artiklar från en kategori och dess underkategorier och returnera dessa artiklar
         {
             if (category.Articles.Count != 0)
             {
@@ -49,11 +49,9 @@ namespace SubscriptionProject
             {
                 foreach (Category c in category.Subcategories)
                 {
-                    List<Article> temp = GetArticles(c, articleList);
-                    temp.ForEach(article => articleList.Add(article));
+                    GetArticles(c, articleList);
                 }
             }
-            return articleList;
         }
 
         //todo: Vi borde ha en AddCategoryToSubscription-metod här
