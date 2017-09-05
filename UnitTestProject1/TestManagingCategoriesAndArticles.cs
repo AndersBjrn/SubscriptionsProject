@@ -19,9 +19,11 @@ namespace UnitTestProject1
             company.AddCategory(company, "About us", "Careers");
             company.AddCategory(company, "About us", "Environment");
 
-            Category aboutUs = company.SubscriptionableCategories["About us"];
-            Category career = company.SubscriptionableCategories["Careers"];
-            Category environment = company.SubscriptionableCategories["Environment"];
+            Editor Håkan = new Editor("Håkan");
+            Editor Bengt = new Editor("Bengt");
+            Editor Lina = new Editor("Lina");
+
+
             return company;
         }
     }
