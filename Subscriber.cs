@@ -72,21 +72,21 @@ namespace SubscriptionProject
             }
         }
 
-        //void CheckChildren(Category cat)
-        //{
-        //    if (Subscription.Contains(cat))
-        //    {
-        //        RemoveCategoryFromSubscription(cat);
-        //        return;
-        //    }
-        //    else if (cat.Subcategories != null)
-        //    {
-        //        foreach (Category category in cat.Subcategories)
-        //        {
-        //            CheckChildren(category);
-        //        }
-        //    }
-        //}
+        void CheckChildren(Category cat)
+        {
+            if (Subscription.Contains(cat))
+            {
+                RemoveCategoryFromSubscription(cat);
+                return;
+            }
+            else if (cat.Subcategories != null)
+            {
+                foreach (Category category in cat.Subcategories)
+                {
+                    CheckChildren(category);
+                }
+            }
+        }
 
         public void AddCategoryToSubscription(Category c)//Lägger till en ny kategori om inte den eller en förälder redan finns i listan
         {
@@ -98,7 +98,10 @@ namespace SubscriptionProject
             {
                 Subscription.Add(c);
             }
-            CheckChildren(c);
+            foreach (Category subcat in c.Subcategories)
+            {
+            CheckChildren(subcat);
+            }
         }
 
         public void RemoveCategoryFromSubscription(Category c)//Ta bort en kategori från listan
